@@ -1,0 +1,31 @@
+<div class="map-container">
+  <div style="margin-bottom: 40px;" class="row">
+    <div class="col-md-4">
+      <label>Start</label>
+      <select class="form-select" [(ngModel)]="dataStart" aria-label="Default select example">
+        <option></option>
+        <option *ngFor="let item of coordonneList" [ngValue]="item">{{item.latitude}} , {{item?.longitude}}</option>
+      </select>
+
+
+    </div>
+    <div class="col-md-4">
+      <label>End</label>
+      <select class="form-select" [(ngModel)]="dataEnd" aria-label="Default select example">
+        <option></option>
+        <option *ngFor="let item of coordonneList" [ngValue]="item">{{item.latitude}} , {{item?.longitude}}</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <button (click)="getDerection()" style="margin-top: 20px" type="button" class="btn btn-primary">get direction</button>
+    </div>
+
+    <div class="col-md-2">
+      <button (click)="startAnimatiomMarker()" style="margin-top: 20px" type="button" class="btn btn-info">Start animation</button>
+    </div>
+
+  </div>
+  <div class="map-frame">
+    <div id="map"></div>
+  </div>
+</div>
